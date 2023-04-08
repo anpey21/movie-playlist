@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+root to: "lists#index"
+resources :lists, except: [:edit, :update ] do
+resources :bookmarks, only: [:new, :create]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
+resources :bookmars, only: [:destroy]
+end
+# write me the routes for all the controllers and views
